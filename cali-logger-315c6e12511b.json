@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cali-logger",
+  "private_key_id": "315c6e12511b276c8aafc18a6567f6f3f68539c2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCcfitEcWPNCUwS\nNLjxauy96H5XKSBcJQykbdZeAIcMp9IzYN61fmcQm0SO3iRSg0gETsqZSJub//Df\napiFjQ3ymdTQNkrbKjU6k3RWLs8QNWqgASz4NXHPKdOq71IpYLy2/Y0ZnCM+adSD\na6ylcoXxmfNrsvGprHP4GfnxHC45hz9/aiN0spm3RPW6XZyxd8naKMQcJL+kAJG4\nkvz0dCHu99xPF1zGw20yuzYFw3FA3zir/zUR9jz56MvecUPziNdikMm4Fa344SWi\nRFIt28IiTzZ0zBjNQfocC/WbhJJkl8SKoPB41ifMjDjel8xUvtZjuTch9l3x58Mg\n6pza/RU9AgMBAAECggEADuz+6tq9XMd3uj7NqunHWOYAjG1vcpc7PI2YH6qBaitL\nFaJpUdP6BLzCZ7WRSLUDwxsFIMr3jupbPeJFWAUkx1BCJ3YeL224DcIVm2JNVoVT\nVtDcSkCSsWJF/kYwLTxWrRKQb1jG710Zq0uZ3l450nOcCQtUS4B98rP+wXvhS5Q2\ncchutVVzeqeCTAPHBJ/7XqmVc+9BpeKhaxTBBqFW8c2/Bv/2M1lynT2iC/Sn+oMM\nWHUxYkRy3Z6ZiJu1T7vqzjz9vqHzV6MUY9jhAJrKmKn0rJR8/+ySU+M00AESy5Yu\nWveN8CSMy03q3MbUHS+cPKjYmC+fvfJL8X9FeHL50wKBgQDOqr8l91HN3e2+AZAO\n0oPiF1n56Hh5o5SYsgdq+1AVELhvka9gSdpMxjSdXVa5EbZcEyEYCLNrKWbJGAmx\n4si2T8Iw5W5Vmgr0sVGipT44nz1DMTtZyHFSqNARCeYBfLt1MG5CuJ/ZMR3rpYHu\nsPxFwtWQZoxi3Jchu8UxfY4iWwKBgQDB2VJH9/N9Zxu8a6kOtmLsYg1xXFEUKD5c\nThuTzOsn8jOcqO/nrZN0GbQsCVM4Hz5FVhWLfIIaP+EbbP47gSKUjZypJY9Xngzr\nNZxrVM6aCQVWqUeb26sXflgBMCNNdCqm4E1NuhTj2LEGAoyvnhQZGfEei7uh6HzY\nqRxvYs4KRwKBgCvaCykxK0h1eMbCaiDbBmTo84yViUq2LQehbvWCUeHGZHw3+3CA\n+zMjM3LYpVgrq/gpjvIcloV8iXTOBvCZ4GDe16Osaxb60qxNG7dZPLSjBUrGnYNV\nhsY1T8DtysIyB0y8dAjwR+q8A09HFSTipQTgbJRxTgSELgVYZGU18PzVAoGBALmx\nsPx4LavnZc5tY5lQZhsDItWBFbo1gudxe0Fuf6XYglCEFKzeve3t4YZ9uFZ+t2w8\nNo9USl1S7BUVp8Tgw3uC3Ju7+0B3ivCWfqzipLcyBQcrSgmnuJHc2fjpYCgGLAWH\nwQXAR9qr7YhQUOy6hY42J6CXQrqqt03lUfPxtmZpAoGAa/F4CtqMjFBbJ3qMTwm2\nxls62FhkLTtOrrRZvWGG5F1L7MxaVQ7iynmDdT94Lk2bPU+ounBmGJgkgE16hxhc\naetLiRJzq3ezSSBaou/wla9GnRxukZn9U9SciQmjyumdHIMAQoQFSfws9x8iEFRn\n/gLpndMfqccOQD+fkrF9gt4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cali-logger@cali-logger.iam.gserviceaccount.com",
+  "client_id": "106477641023882507913",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cali-logger%40cali-logger.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
