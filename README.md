@@ -21,6 +21,8 @@ Example:
 - Search entries by date (`-s YYYY-MM-DD`)
 - Remove one entry from a date (`-r`)
 - Open workout template link (`--template`)
+- Optionally open tutorial link after selecting exercise + level during logging
+- Open tutorial directly with `--tutorial <exercise> <level>`
 
 ## Commands
 
@@ -33,9 +35,34 @@ cali -s 2026-02-14      # search by date
 cali -r                 # remove one entry from a date
 cali --help             # show help
 cali --template         # open workout template link
+cali --tutorial "Pushups" "Incline"   # open tutorial for a specific exercise level
 ```
 
 `--template` opens the Google Drive template link. Local docs files are kept but not opened by CLI commands.
+
+## Optional Tutorials During Logging
+
+After you choose exercise and level in interactive mode, `cali` asks:
+
+`Open tutorial for <Exercise> - <Level>? (y/N):`
+
+- Type `y` or `yes` to open the tutorial in browser.
+- If opened successfully, program exits immediately without saving the workout log.
+- Press Enter (default) or type `n` to continue logging without opening.
+- Tutorial links are **not** saved to local logs or Google Sheets.
+- Links are mapped per exercise/level from `toturial links.yaml`.
+
+## Direct Tutorial Command
+
+Use this to open a tutorial without logging:
+
+```bash
+cali --tutorial "Pushups" "Incline"
+cali --tutorial "Leg Raises" "Knee Tuck"
+cali --tutorial "Handstand Push-ups" "Wall Headstand"
+```
+
+If the exercise or level contains spaces, keep it in quotes.
 
 ## Build and Install
 
@@ -113,7 +140,7 @@ In local mode, entries are written to:
 `~/cali-logger/workout/workout-<year>.log`
 
 ## Google Sheets Mode Setup (Step-by-Step)
-
+- For more details: [chat](https://chatgpt.com/s/t_6990d43465b481919f5dd5f6f3ae8120)
 1. Create a new Google Sheet.
 2. Create or rename one tab to `Log` (or choose a different tab name and set `CALI_SHEET_NAME`).
 3. Add headers in row 1:

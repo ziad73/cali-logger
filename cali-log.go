@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -128,6 +129,68 @@ var exercises = []string{
 	"Handstand Push-ups",
 }
 
+var tutorials = map[string]map[string]string{
+	"Pushups": {
+		"Wall":         "https://www.youtube.com/watch?v=A3V0S82fW_c",
+		"Incline":      "https://www.youtube.com/watch?v=e_83P1V5t8I",
+		"Kneeling":     "https://www.youtube.com/watch?v=NyzxeqY6CR8",
+		"Half":         "https://www.youtube.com/watch?v=bGuUODcwnHA",
+		"Full":         "https://www.youtube.com/watch?v=1QJICN6udbs",
+		"Close":        "https://www.youtube.com/watch?v=3-1vRVuWgBc",
+		"Uneven":       "https://www.youtube.com/watch?v=Xw05GCHjW7A",
+		"Half One-Arm": "https://www.youtube.com/watch?v=DndP84y9_s0",
+		"Lever":        "https://www.youtube.com/watch?v=hG3G4M8Kjlo",
+		"One-Arm":      "https://www.youtube.com/watch?v=ReKZry7JQEQ",
+	},
+	"Squats": {
+		"Shoulderstand":    "https://www.youtube.com/watch?v=YwLd2-XGvXg",
+		"Jackknife":        "https://www.youtube.com/watch?v=w9N-R4iX_9M",
+		"Supported":        "https://www.youtube.com/watch?v=Uq9N8XN_m_8",
+		"Half":             "https://www.youtube.com/watch?v=V9L7X8Xz_M4",
+		"Full":             "https://www.youtube.com/watch?v=5V9L7X8Xz_M4",
+		"Close":            "https://www.youtube.com/watch?v=Q9L7X8Xz_M4",
+		"Uneven":           "https://www.youtube.com/watch?v=R9L7X8Xz_M4",
+		"Half One-Leg":     "https://www.youtube.com/watch?v=S9L7X8Xz_M4",
+		"Assisted One-Leg": "https://www.youtube.com/watch?v=T9L7X8Xz_M4",
+		"One-Leg":          "https://www.youtube.com/watch?v=U9L7X8Xz_M4",
+	},
+	"Pullups": {
+		"Vertical":         "https://www.youtube.com/watch?v=P62h05K84m0",
+		"Horizontal":       "https://www.youtube.com/watch?v=Dsh7qVvA7I0",
+		"Jackknife":        "https://www.youtube.com/watch?v=rK9k0x9I3f8",
+		"Half":             "https://www.youtube.com/watch?v=KzXg785h_rU",
+		"Full":             "https://www.youtube.com/watch?v=M9-MuehP7_I",
+		"Close":            "https://www.youtube.com/watch?v=xSsqOizW64o",
+		"Uneven":           "https://www.youtube.com/watch?v=iTf_O5v77f4",
+		"Half One-Arm":     "https://www.youtube.com/watch?v=f2524vU9m4Y",
+		"Assisted One-Arm": "https://www.youtube.com/watch?v=LqN6rIe6Y_k",
+		"One-Arm":          "https://www.youtube.com/watch?v=n79x4_YJ2_s",
+	},
+	"Leg Raises": {
+		"Knee Tuck":    "https://www.youtube.com/watch?v=17XmGstA2iA",
+		"Knee Raise":   "https://www.youtube.com/watch?v=uK1l0XgC_rM",
+		"Bent Leg":     "https://www.youtube.com/watch?v=iH6u9E5_n3E",
+		"Frog":         "https://www.youtube.com/watch?v=v0Lg-Y6v72Y",
+		"Flat":         "https://www.youtube.com/watch?v=I_W_Uj66t1I",
+		"Hanging Knee": "https://www.youtube.com/watch?v=Rovm9S0-wHw",
+		"Hanging Bent": "https://www.youtube.com/watch?v=5Uj4H2WqC9o",
+		"Partial":      "https://www.youtube.com/watch?v=P_Xf6H1K7f8",
+		"Hanging":      "https://www.youtube.com/watch?v=9_Xf6H1K7f8",
+	},
+	"Bridges": {
+		"Short":          "https://www.youtube.com/watch?v=8p_G-2H83-M",
+		"Straight":       "https://www.youtube.com/watch?v=68e1pU5_004",
+		"Angled":         "https://www.youtube.com/watch?v=lU5Yy67Nf3g",
+		"Head":           "https://www.youtube.com/watch?v=Xv07-4S1P8A",
+		"Half":           "https://www.youtube.com/watch?v=zE60p46fD6E",
+		"Full":           "https://www.youtube.com/watch?v=3-1vRVuWgBc",
+		"Wall Down":      "https://www.youtube.com/watch?v=Xw05GCHjW7A",
+		"Wall Up":        "https://www.youtube.com/watch?v=DndP84y9_s0",
+		"Closing":        "https://www.youtube.com/watch?v=hG3G4M8Kjlo",
+		"Stand-to-Stand": "https://www.youtube.com/watch?v=ReKZry7JQEQ",
+	},
+}
+
 func main() {
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
@@ -144,6 +207,12 @@ func main() {
 		case "--template":
 			if err := openResource("workout-template"); err != nil {
 				fmt.Fprintf(os.Stderr, "Error opening resource: %v\n", err)
+				os.Exit(1)
+			}
+			return
+		case "--tutorial":
+			if err := openTutorialFromArgs(os.Args[2:]); err != nil {
+				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 				os.Exit(1)
 			}
 			return
@@ -202,6 +271,15 @@ func main() {
 
 	exercise := chooseExercise(reader)
 	level := chooseLevel(reader, exercise)
+	tutorialURL := resolveTutorial(exercise, level)
+	if tutorialURL != "" && promptOpenTutorial(reader, exercise, level) {
+		if err := openURL(tutorialURL); err != nil {
+			fmt.Fprintf(os.Stderr, "Warning: failed to open tutorial: %v\n", err)
+		} else {
+			fmt.Println("Tutorial opened. Exiting without logging.")
+			return
+		}
+	}
 
 	fmt.Print("Reps×Sets: ")
 	repsSets, _ := reader.ReadString('\n')
@@ -333,8 +411,7 @@ func openResource(name string) error {
 	}
 
 	const templateURL = "https://drive.google.com/file/d/19zXstmNsSoT6hmseO-nU-h2NNiIK-X2R/view?usp=drive_link"
-	cmd := exec.Command("xdg-open", templateURL)
-	return cmd.Start()
+	return openURL(templateURL)
 }
 
 func resolveGoal(exercise, level string) string {
@@ -344,6 +421,94 @@ func resolveGoal(exercise, level string) string {
 		}
 	}
 	return "-"
+}
+
+func resolveTutorial(exercise, level string) string {
+	if levels, ok := tutorials[exercise]; ok {
+		if link, ok := levels[level]; ok {
+			return link
+		}
+	}
+	return ""
+}
+
+func promptOpenTutorial(reader *bufio.Reader, exercise, level string) bool {
+	fmt.Printf("Open tutorial for %s - %s? (y/N): ", exercise, level)
+	input, _ := reader.ReadString('\n')
+	input = strings.TrimSpace(strings.ToLower(input))
+	return input == "y" || input == "yes"
+}
+
+func openURL(target string) error {
+	var cmd *exec.Cmd
+	switch runtime.GOOS {
+	case "darwin":
+		cmd = exec.Command("open", target)
+	case "windows":
+		cmd = exec.Command("cmd", "/c", "start", "", target)
+	default:
+		cmd = exec.Command("xdg-open", target)
+	}
+	return cmd.Start()
+}
+
+func openTutorialFromArgs(args []string) error {
+	exercise, level, err := parseTutorialArgs(args)
+	if err != nil {
+		return err
+	}
+
+	link := resolveTutorial(exercise, level)
+	if link == "" {
+		return fmt.Errorf("no tutorial mapped for %s - %s", exercise, level)
+	}
+
+	fmt.Printf("Opening tutorial for %s - %s...\n", exercise, level)
+	fmt.Println(link)
+	return openURL(link)
+}
+
+func parseTutorialArgs(args []string) (string, string, error) {
+	if len(args) < 2 {
+		return "", "", fmt.Errorf(`usage: cali --tutorial <exercise> <level> (quote multi-word values, e.g. cali --tutorial "Handstand Push-ups" "Wall Headstand")`)
+	}
+
+	for i := len(args) - 1; i >= 1; i-- {
+		exerciseCandidate := strings.Join(args[:i], " ")
+		levelCandidate := strings.Join(args[i:], " ")
+
+		exercise, ok := normalizeExercise(exerciseCandidate)
+		if !ok {
+			continue
+		}
+
+		level, ok := normalizeLevel(exercise, levelCandidate)
+		if !ok {
+			return "", "", fmt.Errorf("unknown level %q for %s", levelCandidate, exercise)
+		}
+
+		return exercise, level, nil
+	}
+
+	return "", "", fmt.Errorf("unknown exercise %q", strings.Join(args, " "))
+}
+
+func normalizeExercise(input string) (string, bool) {
+	for _, exercise := range exercises {
+		if strings.EqualFold(strings.TrimSpace(input), exercise) {
+			return exercise, true
+		}
+	}
+	return "", false
+}
+
+func normalizeLevel(exercise, input string) (string, bool) {
+	for _, level := range getLevelsForExercise(exercise) {
+		if strings.EqualFold(strings.TrimSpace(input), level) {
+			return level, true
+		}
+	}
+	return "", false
 }
 
 func showHistory(storage Storage) {
@@ -456,7 +621,11 @@ func showHelp() {
 	fmt.Println("  cali -r, --remove       Remove a workout entry")
 	fmt.Println("  cali --help             Show this help message")
 	fmt.Println("  cali --template         Open workout template link")
+	fmt.Println("  cali --tutorial <exercise> <level>  Open tutorial link for exercise level")
 	fmt.Println("  cali open workout-template  Open workout template link")
+	fmt.Println("\nInteractive tutorials:")
+	fmt.Println("  During logging, after selecting exercise and level, cali can open a tutorial link.")
+	fmt.Println("  If opened, cali exits immediately without saving the log entry.")
 	fmt.Println("\nStorage backends:")
 	fmt.Println("  Default: Google Sheets")
 	fmt.Println("  Local files override: set CALI_STORAGE=local")
