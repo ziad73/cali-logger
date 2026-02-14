@@ -35,6 +35,7 @@ cali -s 2026-02-14      # search by date
 cali -r                 # remove one entry from a date
 cali --help             # show help
 cali --template         # open workout template link
+cali -yt                # open Convicted Condition playlists
 cali --tutorial "Pushups" "Incline"   # open tutorial for a specific exercise level
 ```
 

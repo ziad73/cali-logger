@@ -42,6 +42,7 @@ type Storage interface {
 const (
 	defaultSheetName = "Log"
 	dateLayout       = "2006-01-02"
+	playlistsURL     = "https://www.youtube.com/@convictedcondition/playlists"
 )
 
 // Goal map: Exercise -> Level -> Goal
@@ -207,6 +208,12 @@ func main() {
 		case "--template":
 			if err := openResource("workout-template"); err != nil {
 				fmt.Fprintf(os.Stderr, "Error opening resource: %v\n", err)
+				os.Exit(1)
+			}
+			return
+		case "-yt", "--yt":
+			if err := openURL(playlistsURL); err != nil {
+				fmt.Fprintf(os.Stderr, "Error opening playlists: %v\n", err)
 				os.Exit(1)
 			}
 			return
@@ -621,6 +628,7 @@ func showHelp() {
 	fmt.Println("  cali -r, --remove       Remove a workout entry")
 	fmt.Println("  cali --help             Show this help message")
 	fmt.Println("  cali --template         Open workout template link")
+	fmt.Println("  cali -yt, --yt          Open Convicted Condition playlists")
 	fmt.Println("  cali --tutorial <exercise> <level>  Open tutorial link for exercise level")
 	fmt.Println("  cali open workout-template  Open workout template link")
 	fmt.Println("\nInteractive tutorials:")
