@@ -132,67 +132,72 @@ var exercises = []string{
 
 var tutorials = map[string]map[string]string{
 	"Pushups": {
-		"Wall":         "https://www.youtube.com/watch?v=A3V0S82fW_c",
-		"Incline":      "https://www.youtube.com/watch?v=e_83P1V5t8I",
+		"Wall":         "https://www.youtube.com/watch?v=N5C9NUHZ20U",
+		"Incline":      "https://www.youtube.com/watch?v=Gv8y_prZBZY",
 		"Kneeling":     "https://www.youtube.com/watch?v=NyzxeqY6CR8",
 		"Half":         "https://www.youtube.com/watch?v=bGuUODcwnHA",
 		"Full":         "https://www.youtube.com/watch?v=1QJICN6udbs",
 		"Close":        "https://www.youtube.com/watch?v=3-1vRVuWgBc",
-		"Uneven":       "https://www.youtube.com/watch?v=Xw05GCHjW7A",
-		"Half One-Arm": "https://www.youtube.com/watch?v=DndP84y9_s0",
-		"Lever":        "https://www.youtube.com/watch?v=hG3G4M8Kjlo",
+		"Uneven":       "https://www.youtube.com/watch?v=o1abTRdwpUs",
+		"Half One-Arm": "https://www.youtube.com/watch?v=63077t3I4Zc",
+		"Lever":        "https://www.youtube.com/watch?v=Hwq5zdb-owA",
 		"One-Arm":      "https://www.youtube.com/watch?v=ReKZry7JQEQ",
 	},
 	"Squats": {
-		"Shoulderstand":    "https://www.youtube.com/watch?v=YwLd2-XGvXg",
-		"Jackknife":        "https://www.youtube.com/watch?v=w9N-R4iX_9M",
-		"Supported":        "https://www.youtube.com/watch?v=Uq9N8XN_m_8",
-		"Half":             "https://www.youtube.com/watch?v=V9L7X8Xz_M4",
-		"Full":             "https://www.youtube.com/watch?v=5V9L7X8Xz_M4",
-		"Close":            "https://www.youtube.com/watch?v=Q9L7X8Xz_M4",
-		"Uneven":           "https://www.youtube.com/watch?v=R9L7X8Xz_M4",
-		"Half One-Leg":     "https://www.youtube.com/watch?v=S9L7X8Xz_M4",
-		"Assisted One-Leg": "https://www.youtube.com/watch?v=T9L7X8Xz_M4",
-		"One-Leg":          "https://www.youtube.com/watch?v=U9L7X8Xz_M4",
+		"Shoulderstand":    "https://www.youtube.com/watch?v=a-JNXY_hnSs",
+		"Jackknife":        "https://www.youtube.com/watch?v=QhyRsrPOkoY",
+		"Supported":        "https://www.youtube.com/watch?v=cLQS5mZmXN0",
+		"Half":             "https://www.youtube.com/watch?v=tIHNkW0nGFg",
+		"Full":             "https://www.youtube.com/watch?v=S3bNmmxkh_k",
+		"Close":            "https://www.youtube.com/watch?v=MiNzsa9MIpI",
+		"Uneven":           "https://www.youtube.com/watch?v=UhslmLWprQg",
+		"Half One-Leg":     "https://www.youtube.com/watch?v=dZON2MCVdfg",
+		"Assisted One-Leg": "https://www.youtube.com/watch?v=9Mcs9M1HORQ",
+		"One-Leg":          "https://www.youtube.com/watch?v=fNCTWGl1Q8A",
 	},
 	"Pullups": {
-		"Vertical":         "https://www.youtube.com/watch?v=P62h05K84m0",
-		"Horizontal":       "https://www.youtube.com/watch?v=Dsh7qVvA7I0",
-		"Jackknife":        "https://www.youtube.com/watch?v=rK9k0x9I3f8",
-		"Half":             "https://www.youtube.com/watch?v=KzXg785h_rU",
-		"Full":             "https://www.youtube.com/watch?v=M9-MuehP7_I",
-		"Close":            "https://www.youtube.com/watch?v=xSsqOizW64o",
-		"Uneven":           "https://www.youtube.com/watch?v=iTf_O5v77f4",
-		"Half One-Arm":     "https://www.youtube.com/watch?v=f2524vU9m4Y",
-		"Assisted One-Arm": "https://www.youtube.com/watch?v=LqN6rIe6Y_k",
-		"One-Arm":          "https://www.youtube.com/watch?v=n79x4_YJ2_s",
+		"Vertical":         "https://www.youtube.com/watch?v=F8kIJMeqCMs",
+		"Horizontal":       "https://www.youtube.com/watch?v=YN0vvoqssfw",
+		"Jackknife":        "https://www.youtube.com/watch?v=58ss6OF4fmQ",
+		"Half":             "https://www.youtube.com/watch?v=vsRRJGHhKnA",
+		"Full":             "https://www.youtube.com/watch?v=9HBukpLkZIM",
+		"Close":            "https://www.youtube.com/watch?v=Om_3c0jozTc",
+		"Uneven":           "https://www.youtube.com/watch?v=fCHcb4MB1FM",
+		"Half One-Arm":     "https://www.youtube.com/watch?v=ve0EIQdRLag",
+		"Assisted One-Arm": "https://www.youtube.com/watch?v=W8DBEewoDmY",
+		"One-Arm":          "https://www.youtube.com/watch?v=2tHTY6ZKzkc",
 	},
 	"Leg Raises": {
-		"Knee Tuck":    "https://www.youtube.com/watch?v=17XmGstA2iA",
-		"Knee Raise":   "https://www.youtube.com/watch?v=uK1l0XgC_rM",
-		"Bent Leg":     "https://www.youtube.com/watch?v=iH6u9E5_n3E",
-		"Frog":         "https://www.youtube.com/watch?v=v0Lg-Y6v72Y",
-		"Flat":         "https://www.youtube.com/watch?v=I_W_Uj66t1I",
-		"Hanging Knee": "https://www.youtube.com/watch?v=Rovm9S0-wHw",
-		"Hanging Bent": "https://www.youtube.com/watch?v=5Uj4H2WqC9o",
-		"Partial":      "https://www.youtube.com/watch?v=P_Xf6H1K7f8",
-		"Hanging":      "https://www.youtube.com/watch?v=9_Xf6H1K7f8",
+		"Knee Tuck":    "https://www.youtube.com/watch?v=N8k-SeCkR0s",
+		"Knee Raise":   "https://www.youtube.com/watch?v=98ragSP4gC8",
+		"Bent Leg":     "https://www.youtube.com/watch?v=qq69_MifXAc",
+		"Frog":         "https://www.youtube.com/watch?v=esoUyks3PZM",
+		"Flat":         "https://www.youtube.com/watch?v=hav89ezKkPA",
+		"Hanging Knee": "https://www.youtube.com/watch?v=t2MU4Q4V3Xk",
+		"Hanging Bent": "https://www.youtube.com/watch?v=CtFMjDbU0P4",
+		"Partial":      "https://www.youtube.com/watch?v=y4cCwSpScPo",
+		"Hanging":      "https://www.youtube.com/watch?v=7jI6fDNY_yM",
 	},
 	"Bridges": {
-		"Short":          "https://www.youtube.com/watch?v=8p_G-2H83-M",
-		"Straight":       "https://www.youtube.com/watch?v=68e1pU5_004",
-		"Angled":         "https://www.youtube.com/watch?v=lU5Yy67Nf3g",
-		"Head":           "https://www.youtube.com/watch?v=Xv07-4S1P8A",
-		"Half":           "https://www.youtube.com/watch?v=zE60p46fD6E",
-		"Full":           "https://www.youtube.com/watch?v=3-1vRVuWgBc",
-		"Wall Down":      "https://www.youtube.com/watch?v=Xw05GCHjW7A",
-		"Wall Up":        "https://www.youtube.com/watch?v=DndP84y9_s0",
-		"Closing":        "https://www.youtube.com/watch?v=hG3G4M8Kjlo",
-		"Stand-to-Stand": "https://www.youtube.com/watch?v=ReKZry7JQEQ",
+		"Short":          "https://www.youtube.com/watch?v=JQFddjAFWZw",
+		"Straight":       "https://www.youtube.com/watch?v=gkTVDJHHIZ0",
+		"Angled":         "https://www.youtube.com/watch?v=o9yKAjvUQlM",
+		"Head":           "https://www.youtube.com/watch?v=BIq3sAZAekg",
+		"Half":           "https://www.youtube.com/watch?v=JXHnTtE9NSk",
+		"Full":           "https://www.youtube.com/watch?v=qnU9LoO5Cyg",
+		"Wall Down":      "https://www.youtube.com/watch?v=LD1h45ArqcY",
+		"Wall Up":        "https://www.youtube.com/watch?v=sc_hsEM7xnA",
+		"Closing":        "https://www.youtube.com/watch?v=tGv50Whxouk",
+		"Stand-to-Stand": "https://www.youtube.com/watch?v=wZnixqvk-24",
 	},
 }
 
 func main() {
+	if err := validateTutorialMappings(); err != nil {
+		fmt.Fprintf(os.Stderr, "Tutorial link mapping error: %v\n", err)
+		os.Exit(1)
+	}
+
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
 		case "open":
@@ -437,6 +442,25 @@ func resolveTutorial(exercise, level string) string {
 		}
 	}
 	return ""
+}
+
+func validateTutorialMappings() error {
+	for exercise, levels := range tutorials {
+		goalLevels, ok := goals[exercise]
+		if !ok {
+			return fmt.Errorf("unknown exercise key in tutorials: %q", exercise)
+		}
+
+		for level, link := range levels {
+			if _, ok := goalLevels[level]; !ok {
+				return fmt.Errorf("unknown level key in tutorials: %q -> %q", exercise, level)
+			}
+			if !strings.HasPrefix(strings.TrimSpace(link), "https://www.youtube.com/watch?v=") {
+				return fmt.Errorf("invalid youtube link for %q -> %q: %q", exercise, level, link)
+			}
+		}
+	}
+	return nil
 }
 
 func promptOpenTutorial(reader *bufio.Reader, exercise, level string) bool {

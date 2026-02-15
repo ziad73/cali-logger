@@ -51,7 +51,8 @@ After you choose exercise and level in interactive mode, `cali` asks:
 - If opened successfully, program exits immediately without saving the workout log.
 - Press Enter (default) or type `n` to continue logging without opening.
 - Tutorial links are **not** saved to local logs or Google Sheets.
-- Links are mapped per exercise/level from `toturial links.yaml`.
+- Links are mapped per exercise/level from `yt-links.txt` and mirrored in code.
+- If an exercise/level has no mapping, tutorial prompt is skipped.
 
 ## Direct Tutorial Command
 
@@ -64,6 +65,24 @@ cali --tutorial "Handstand Push-ups" "Wall Headstand"
 ```
 
 If the exercise or level contains spaces, keep it in quotes.
+
+## Updating Tutorial Links
+
+Source of truth: `yt-links.txt`.
+
+When links change:
+1. Update `yt-links.txt`.
+2. Update tutorial map in `cali-log.go` to match.
+3. Build:
+
+```bash
+go build -o ~/.local/bin/cali .
+```
+
+The app validates tutorial mappings at startup and fails fast on:
+- Unknown exercise keys
+- Unknown level keys
+- Invalid YouTube URLs
 
 ## Build and Install
 
