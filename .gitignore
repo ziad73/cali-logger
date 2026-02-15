@@ -16,3 +16,9 @@ Thumbs.db
 # Common temp folders
 tmp/
 temp/
+
+cali-logger-*.json
+
+cali
+
+workout/workout-2026.log

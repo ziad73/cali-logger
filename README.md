@@ -41,6 +41,51 @@ cali --tutorial "Pushups" "Incline"   # open tutorial for a specific exercise le
 
 `--template` opens the Google Drive template link. Local docs files are kept but not opened by CLI commands.
 
+## How To Train
+
+### Typical Training Split
+
+The book recommends short, frequent sessions (often 3-4 days per week).
+
+Example split:
+- Day A: Pushups, Squats
+- Day B: Pullups, Leg Raises
+- Day C: Bridges, Handstand Push-ups
+
+Then repeat with rest days as needed.
+
+### Sets, Reps, and Progression
+
+- Usually 2-3 work sets per exercise
+- Rep ranges depend on progression level
+- Do not train to failure
+- When you hit top rep goal with perfect form, move to next step
+
+Example:
+- Step 4 Pushups goal: `2x20`
+- Once achieved with control, progress to Step 5
+
+### Key Rules
+
+- Perfect form beats high reps
+- Slow progression builds stronger joints and tendons
+- Minimal equipment
+- Consistency over intensity
+- Rest days are part of progress
+
+### What Makes It Different
+
+- No max-out focus
+- No bodybuilding split focus
+- No chasing burn for its own sake
+- Long-term strength, durability, and control first
+
+### References
+
+- Training sheet: https://docs.google.com/spreadsheets/d/1UR8NUQ2-Tnayhr6wHqXyjn5_IKpCmF01-jwac7KaMqc/edit?usp=drivesdk
+- Visualized techniques: https://youtube.com/@convictedcondition?si=rJo4tuCXpgGocWEy
+- For full details, see the book/PDF.
+
 ## Optional Tutorials During Logging
 
 After you choose exercise and level in interactive mode, `cali` asks:
